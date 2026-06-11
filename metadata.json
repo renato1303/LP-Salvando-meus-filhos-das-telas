@@ -1,0 +1,6 @@
+{
+  "name": "Reconexão Familiar",
+  "description": "Uma landing page premium dedicada a guiar pais na reconexão e bem-estar digital de seus filhos, com foco em afeto e equilíbrio de telas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
