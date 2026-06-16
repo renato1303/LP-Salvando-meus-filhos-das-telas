@@ -8,6 +8,8 @@ import walaceImage from '../assets/.aistudio/images/walace.png';
 import finalImage from '../assets/.aistudio/images/pexels-rdne-8208273.jpg';
 // @ts-ignore
 import bookCoverImage from '../assets/.aistudio/images/71pprGBjBBL._SY466_.jpg';
+// @ts-ignore
+import presentationVideo from '../assets/.aistudio/images/videoLP.mp4';
 import {
   BookOpen,
   Check,
@@ -18,7 +20,10 @@ import {
   X,
   ShieldCheck,
   Sparkles,
-  Award
+  Award,
+  Play,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 
 interface SmartImageProps {
@@ -83,6 +88,44 @@ export default function App() {
   const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [hasScrolled, setHasScrolled] = useState(false);
+
+  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+  const maxTimeWatched = React.useRef<number>(0);
+  const [videoMuted, setVideoMuted] = useState(true);
+
+  // Auto-play when the user scrolls down and the video section is rendered
+  React.useEffect(() => {
+    if (hasScrolled && videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.warn("Autoplay was prevented by browser policy, waiting for user click:", error);
+        });
+      }
+    }
+  }, [hasScrolled]);
+
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Reject fast forwarding/seeking forward beyond max watched progress
+    if (video.currentTime > maxTimeWatched.current + 1.5) {
+      video.currentTime = maxTimeWatched.current;
+    } else {
+      maxTimeWatched.current = Math.max(maxTimeWatched.current, video.currentTime);
+    }
+  };
+
+  const handleSeeking = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Reject fast forwarding/seeking forward beyond max watched progress
+    if (video.currentTime > maxTimeWatched.current + 1.5) {
+      video.currentTime = maxTimeWatched.current;
+    }
+  };
 
   React.useEffect(() => {
     const triggerReveal = () => {
@@ -342,6 +385,63 @@ export default function App() {
             exit={{ opacity: 0, y: 60 }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           >
+            {/* SEÇÃO DO VÍDEO DE APRESENTAÇÃO */}
+            <section id="apresentacao-video" className="pt-16 pb-8 bg-transparent relative">
+              <div className="max-w-4xl mx-auto px-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-120px" }}
+                  transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-white/[0.03] backdrop-blur-xl rounded-[32px] p-6 md:p-10 border border-white/5 shadow-[0_24px_60px_rgba(0,0,0,0.4)] text-center space-y-6"
+                >
+                  <div className="space-y-3">
+                    <span className="text-xs font-extrabold text-[#FBC300] uppercase tracking-widest flex items-center justify-center gap-2">
+                      <Play className="w-3 animate-pulse text-[#FFD166] fill-[#FFD166]" /> Vídeo de Apresentação
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                      Conheça a Proposta de "Salvando Meu Filho das Telas"
+                    </h2>
+                    <p className="text-slate-300 text-sm max-w-xl mx-auto">
+                      Assista ao vídeo e entenda como restabelecer a presença, a atenção recíproca e um diálogo saudável em seu lar.
+                    </p>
+                  </div>
+
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/5 shadow-[0_15px_45px_rgba(0,0,0,0.65)] bg-black/60 group">
+                    <video
+                      ref={videoRef}
+                      src={presentationVideo}
+                      controls
+                      autoPlay
+                      muted={videoMuted}
+                      onTimeUpdate={handleTimeUpdate}
+                      onSeeking={handleSeeking}
+                      className="w-full h-full object-cover filter brightness-[0.93]"
+                      poster="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80"
+                    />
+
+                    {videoMuted && (
+                      <button
+                        onClick={() => setVideoMuted(false)}
+                        className="absolute bottom-4 right-4 z-10 bg-[#FFD166] text-[#070D19] font-extrabold text-[11px] uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-[0_8px_20px_rgba(255,209,102,0.3)] hover:shadow-[0_10px_25px_rgba(255,209,102,0.4)] hover:scale-105 hover:bg-[#ffe199] transition-all flex items-center gap-1.5 cursor-pointer"
+                      >
+                        <VolumeX className="w-3.5 h-3.5 animate-bounce-slow" /> Ativar Som
+                      </button>
+                    )}
+
+                    {!videoMuted && (
+                      <button
+                        onClick={() => setVideoMuted(true)}
+                        className="absolute bottom-4 right-4 z-10 bg-black/60 backdrop-blur-md text-white border border-white/10 font-bold text-[11px] uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all flex items-center gap-1.5 cursor-pointer hover:bg-black/80"
+                      >
+                        <Volume2 className="w-3.5 h-3.5 text-[#FFD166]" /> Silenciar
+                      </button>
+                    )}
+                  </div>
+                </motion.div>
+              </div>
+            </section>
+
             {/* SEÇÃO 2: O PROBLEMA */}
             <section id="problema" className="py-24 bg-transparent relative">
               <div className="max-w-4xl mx-auto px-6">
