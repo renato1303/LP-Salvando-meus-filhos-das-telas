@@ -146,24 +146,24 @@ export default function App() {
   };
 
   return (
-    <div className="relative bg-[#FAF9F6] text-[#1a2a3a] min-h-[101vh] overflow-x-hidden font-sans selection:bg-[#4EA8DE]/20 selection:text-[#0D3B66]">
+    <div className="relative bg-[#070D19] text-[#F1F5F9] min-h-[101vh] overflow-x-hidden font-sans selection:bg-[#FBC300]/30 selection:text-white">
       
       {/* Decorative Glassmorphic Backdrop Spheres - Deep visual refraction */}
-      <div className="absolute top-[5%] left-[5%] w-[45vw] h-[45vw] max-w-[450px] max-h-[450px] bg-[#4EA8DE]/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" />
-      <div className="absolute top-[25%] right-[5%] w-[40vw] h-[40vw] max-w-[400px] max-h-[400px] bg-[#FFD166]/20 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" />
-      <div className="absolute bottom-[35%] left-[10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-[#0D3B66]/8 rounded-full blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute bottom-[10%] right-[10%] w-[40vw] h-[40vw] max-w-[400px] max-h-[400px] bg-[#4EA8DE]/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute top-[5%] left-[5%] w-[45vw] h-[45vw] max-w-[450px] max-h-[450px] bg-[#4EA8DE]/10 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute top-[25%] right-[5%] w-[40vw] h-[40vw] max-w-[400px] max-h-[400px] bg-[#FFD166]/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute bottom-[35%] left-[10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-[#4EA8DE]/5 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute bottom-[10%] right-[10%] w-[40vw] h-[40vw] max-w-[400px] max-h-[400px] bg-[#4EA8DE]/10 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" />
 
       {/* SEÇÃO 1: HERO */}
       <section id="hero" className="relative pt-12 pb-24 md:py-32 overflow-hidden bg-transparent">
-        <div className="absolute inset-x-4 bottom-0 top-[40%] bg-white/25 backdrop-blur-md -z-10 rounded-t-[48px] border-t border-x border-white/40 shadow-[0_-12px_40px_rgba(13,59,102,0.03)]" />
+        <div className="absolute inset-x-4 bottom-0 top-[40%] bg-white/[0.02] backdrop-blur-md -z-10 rounded-t-[48px] border-t border-x border-white/5 shadow-[0_-12px_40px_rgba(0,0,0,0.4)]" />
         
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D3B66] tracking-tight leading-[1.08]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08]">
                 Salvando Meu Filho das Telas
               </h1>
 
@@ -171,7 +171,7 @@ export default function App() {
                 Ajudando pais a restabelecerem um relacionamento saudável com os filhos.
               </p>
 
-              <p className="text-[#1a2a3a]/80 text-base leading-relaxed max-w-2xl">
+              <p className="text-slate-300 text-base leading-relaxed max-w-2xl">
                 Uma leitura essencial para pais que desejam fortalecer a conexão com seus filhos em um mundo cada vez mais dominado por distrações digitais. Descubra bases neurobiológicas e métodos afetuosos para reconectar o diálogo familiar.
               </p>
 
@@ -181,68 +181,125 @@ export default function App() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   onClick={handleRevealClick}
-                  className="bg-[#0D3B66] hover:bg-[#062444] text-white font-semibold text-sm px-8 py-3.5 rounded-xl shadow-[0_10px_25px_-5px_rgba(13,59,102,0.3)] hover:shadow-[0_12px_30px_-5px_rgba(13,59,102,0.4)] transition-all inline-flex items-center justify-center gap-2 group cursor-pointer"
+                  className="bg-[#FFD166] hover:bg-[#ffe199] text-[#070D19] font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-[0_10px_25px_-5px_rgba(255,209,102,0.35)] hover:shadow-[0_12px_30px_-5px_rgba(255,209,102,0.5)] transition-all inline-flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Comprar na Amazon
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <button 
                   onClick={() => { setSampleModalOpen(true); handleRevealClick(); }}
-                  className="bg-white/60 hover:bg-white/90 text-[#0D3B66] border border-white/80 hover:border-white backdrop-blur-md font-semibold text-sm px-8 py-3.5 rounded-xl shadow-sm transition-all cursor-pointer text-center"
+                  className="bg-white/10 hover:bg-white/20 text-white border border-white/10 backdrop-blur-md font-semibold text-sm px-8 py-3.5 rounded-xl shadow-sm transition-all cursor-pointer text-center"
                 >
                   Ler Amostra
                 </button>
               </div>
 
-              <div className="pt-6 flex items-center gap-6 text-[#0D3B66]/70">
+              <div className="pt-6 flex items-center gap-6 text-slate-400">
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#4EA8DE]" />
+                  <Check className="w-4 h-4 text-[#FFD166]" />
                   <span className="text-xs font-semibold">Formato Físico & Kindle</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#4EA8DE]" />
+                  <Check className="w-4 h-4 text-[#FFD166]" />
                   <span className="text-xs font-semibold">Disponível em todo Brasil</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Content: Cover of the Book (Centerpiece as requested) */}
-            <div className="lg:col-span-5 flex justify-center relative">
-              {/* Refraction Glass Pedestal effect around the book */}
-              <div className="absolute -inset-4 bg-white/20 backdrop-blur-xl rounded-[32px] border border-white/50 shadow-inner -z-10 pointer-events-none transform rotate-1 scale-[1.03]" />
-              
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative group w-full max-w-[340px]"
-              >
-                {/* Book design element - Elegant, premium and gorgeous using the real book cover image */}
-                <div className="relative w-full aspect-[2/3] bg-[#0D3B66] rounded-r-2xl rounded-l-md shadow-[10px_20px_50px_rgba(13,59,102,0.35)] overflow-hidden border-l-[8px] border-black/15 select-none transition-transform duration-500 group-hover:-translate-y-2">
-                  <SmartImage
-                    sources={[
-                      bookCoverImage,
-                      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80'
-                    ]}
-                    alt="Capa do livro: Salvando Meu Filho das Telas - Método Pinguim"
-                    className="w-full h-full object-cover rounded-r-xl"
-                    aspectRatioClass="aspect-[2/3]"
-                    fallbackIcon={<Heart className="w-12 h-12 text-[#FFD166]" />}
-                    fallbackTitle="Salvando Meu Filho das Telas"
-                    fallbackDesc="Método Pinguim de Parentalidade Saudável"
-                  />
-                  {/* Glowing subtle highlight overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-white/10 pointer-events-none" />
-                </div>
+            {/* Right Content: Cover of the Book + Kindle Device (3D masterpiece combo) */}
+            <div className="lg:col-span-5 flex items-center justify-center relative min-h-[380px]">
+              <div className="flex items-end justify-center w-full max-w-md gap-4 sm:gap-6 px-2">
+                
+                {/* Physical Book Wrapper */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95, x: -15 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative group w-[54%] book-3d-wrapper py-4 z-10"
+                >
+                  {/* 3D Physical Hardcover Box with precise perspective style */}
+                  <div className="book-3d shadow-[22px_28px_55px_rgba(0,0,0,0.6)]">
+                    {/* Spine depth shadows */}
+                    <div className="book-spine-depth" />
 
-                {/* Depth 3D effect borders (20% Graphic detail rule) */}
-                <div className="absolute -inset-2 border border-[#0D3B66]/10 rounded-3xl -z-10 pointer-events-none" />
-                <div className="absolute -bottom-4 right-1/2 translate-x-1/2 bg-white px-4 py-1.5 rounded-full shadow-md border border-[#0D3B66]/5 whitespace-nowrap">
-                  <span className="text-[10px] font-bold text-[#0D3B66] uppercase tracking-wider">
-                    ★ Best-seller Parentalidade
-                  </span>
-                </div>
-              </motion.div>
+                    {/* Simulated three-dimensional pages thickness on the side */}
+                    <div className="book-page-depth" />
+
+                    {/* Book design cover wrapping */}
+                    <div className="relative w-full aspect-[2/3] bg-[#0A1224] rounded-r-[4px] rounded-l-md overflow-hidden border-l-[3px] border-black/30 select-none">
+                      <SmartImage
+                        sources={[
+                          bookCoverImage,
+                          'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80'
+                        ]}
+                        alt="Capa do livro: Salvando Meu Filho das Telas - Método Pinguim"
+                        className="w-full h-full object-cover"
+                        aspectRatioClass="aspect-[2/3]"
+                        fallbackIcon={<Heart className="w-12 h-12 text-[#FFD166]" />}
+                        fallbackTitle="Salvando Meu Filho das Telas"
+                        fallbackDesc="Método Pinguim de Parentalidade Saudável"
+                      />
+                      {/* Glowing subtle highlight overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-white/15 pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* Depth 3D effect base backing and Best Seller tag */}
+                  <div className="absolute -inset-2 border border-white/5 rounded-3xl -z-10 pointer-events-none" />
+                  <div className="absolute -bottom-2 right-[10%] bg-[#FFD166] px-3.5 py-1.5 rounded-full shadow-md border border-[#FFD166]/20 whitespace-nowrap z-25">
+                    <span className="text-[9px] font-extrabold text-[#070D19] uppercase tracking-wider flex items-center gap-1">
+                      <Award className="w-3.5 h-3.5 text-[#070D19]" /> Físico
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* 3D Kindle e-Reader Wrapper next to it */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.92, x: 15 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{ duration: 1.1, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative group w-[42%] kindle-3d-wrapper py-4 -ml-2 sm:-ml-4 z-20 self-center"
+                >
+                  {/* 3D Physical Kindle frame with rotateY */}
+                  <div className="kindle-3d shadow-[18px_24px_45px_rgba(0,0,0,0.65)]">
+                    {/* Kindle thin side-depth simulation */}
+                    <div className="kindle-side-depth" />
+
+                    {/* Kindle body structure */}
+                    <div className="kindle-bezel">
+                      {/* Kindle Matte Screen */}
+                      <div className="kindle-screen aspect-[2/3]">
+                        <SmartImage
+                          sources={[
+                            bookCoverImage,
+                            'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80'
+                          ]}
+                          alt="E-reader Kindle: Salvando Meu Filho das Telas"
+                          className="w-full h-full object-cover filter brightness-[0.80] contrast-[1.05]"
+                          aspectRatioClass="aspect-[2/3]"
+                          fallbackIcon={<Heart className="w-8 h-8 text-[#FFD166]" />}
+                          fallbackTitle="Salvando Meu Filho"
+                          fallbackDesc="Dispositivo Kindle"
+                        />
+                        {/* Paper-like E-ink screen matte overlay */}
+                        <div className="absolute inset-0 bg-white/[0.03] mix-blend-overlay pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/5 pointer-events-none" />
+                      </div>
+
+                      {/* Kindle trademark logo text */}
+                      <div className="kindle-logo">kindle</div>
+                    </div>
+                  </div>
+
+                  {/* Kindle format badge tag */}
+                  <div className="absolute -bottom-2 left-[15%] bg-slate-900/90 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full shadow-md whitespace-nowrap z-25">
+                    <span className="text-[9px] font-extrabold text-[#4EA8DE] uppercase tracking-wider">
+                      Kindle
+                    </span>
+                  </div>
+                </motion.div>
+
+              </div>
             </div>
 
           </div>
@@ -256,15 +313,15 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 15 }}
               transition={{ duration: 0.4 }}
-              className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#0D3B66]/70 z-20 pointer-events-none"
+              className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-300 z-20 pointer-events-none"
             >
-              <span className="text-[10px] tracking-widest uppercase font-bold text-[#0D3B66]/50">
+              <span className="text-[10px] tracking-widest uppercase font-bold text-slate-400">
                 Determine o Futuro • Role Abaixo
               </span>
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-                className="w-8 h-8 rounded-full bg-white/70 border border-white/90 flex items-center justify-center text-[#4EA8DE] shadow-[0_4px_12px_rgba(13,59,102,0.08)] backdrop-blur-md"
+                className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#FFD166] shadow-[0_4px_12px_rgba(0,0,0,0.35)] backdrop-blur-md"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -295,13 +352,13 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-120px" }}
                   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="bg-white/45 backdrop-blur-xl rounded-[32px] p-8 md:p-14 border border-white/60 shadow-[0_24px_60px_-15px_rgba(13,59,102,0.05)]"
+                  className="bg-white/[0.03] backdrop-blur-xl rounded-[32px] p-8 md:p-14 border border-white/5 shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
                 >
                   <div className="space-y-4 text-center max-w-2xl mx-auto mb-12">
                     <span className="text-xs font-extrabold text-[#FBC300] uppercase tracking-widest block animate-pulse">
                       DIAGNÓSTICO E REALIDADE
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D3B66] tracking-tight leading-tight">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                       A tecnologia está aproximando pessoas ou afastando famílias?
                     </h2>
                     <div className="w-12 h-1 bg-[#FBC300] mx-auto rounded-full" />
@@ -317,7 +374,7 @@ export default function App() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div className="rounded-2xl overflow-hidden shadow-md border border-white/80 bg-white/40 p-2 backdrop-blur-sm">
+                      <div className="rounded-2xl overflow-hidden shadow-lg border border-white/5 bg-white/[0.03] p-2 backdrop-blur-sm">
                         <SmartImage 
                           sources={[
                             problemaImage,
@@ -343,15 +400,15 @@ export default function App() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <p className="text-base text-[#1a2a3a]/80 leading-relaxed font-semibold">
+                      <p className="text-base text-slate-300 leading-relaxed font-semibold">
                         Cuidar de um filho no século XXI é competir diariamente com as mentes de engenharia comportamental mais brilhantes do vale do silício. Nossas casas tornaram-se pequenos centros onde todos estão fisicamente juntos, porém isolados em seus universos particulares de luz azul.
                       </p>
 
-                      <p className="text-base text-[#1a2a3a]/80 leading-relaxed">
+                      <p className="text-base text-slate-300 leading-relaxed">
                         Essa ausência atenta e conectada gera uma desregulação silenciosa no circuito neurológico infantil. Crianças perdem a habilidade de tolerar o tédio, evitam o contato visual com os próprios pais e buscam com ansiedade a dopamina sintética do scroll infinito.
                       </p>
 
-                      <p className="text-base text-[#1a2a3a]/80 leading-relaxed">
+                      <p className="text-base text-slate-300 leading-relaxed">
                         Este livro foi escrito para quebrar esse ciclo de forma pragmática e amorosa. Walace traduz a ciência cognitiva em rituais leves que devolvem os momentos íntimos de presença no seu lar, sem transformar o processo em um campo de batalha.
                       </p>
                     </motion.div>
@@ -376,10 +433,10 @@ export default function App() {
                   <span className="text-xs font-extrabold text-[#FBC300] uppercase tracking-widest block">
                     ESTRUTURA E TRANSFORMAÇÃO
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D3B66] tracking-tight leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
                     O caminho prático para a harmonia
                   </h2>
-                  <p className="text-sm text-[#1a2a3a]/75">
+                  <p className="text-sm text-slate-400">
                     Sem enrolações. Apenas a matriz exata do Método Pinguim de reconexão familiar profunda.
                   </p>
                 </motion.div>
@@ -392,14 +449,14 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, delay: 0.05 }}
-                    className="p-6 md:p-8 rounded-2xl bg-white/45 backdrop-blur-md border border-white/60 hover:bg-white/70 hover:shadow-[0_12px_42px_-12px_rgba(13,59,102,0.06)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
+                    className="p-6 md:p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-white/5 hover:bg-white/[0.06] hover:border-white/10 hover:shadow-[0_12px_42px_rgba(0,0,0,0.5)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
                   >
-                    <div className="w-8 h-8 rounded-full bg-[#0D3B66]/5 flex items-center justify-center shrink-0 mt-0.5 border border-[#0D3B66]/10">
-                      <Check className="w-4 h-4 text-[#0D3B66]" />
+                    <div className="w-8 h-8 rounded-full bg-[#FFD166]/10 flex items-center justify-center shrink-0 mt-0.5 border border-[#FFD166]/20">
+                      <Check className="w-4 h-4 text-[#FFD166]" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-bold text-base text-[#0D3B66]">Como recuperar o diálogo dentro de casa</h3>
-                      <p className="text-xs text-[#1a2a3a]/75 leading-relaxed">
+                      <h3 className="font-bold text-base text-slate-100">Como recuperar o diálogo dentro de casa</h3>
+                      <p className="text-xs text-slate-400 leading-relaxed">
                         Roteiros verbais funcionais de comunicação para desbloquear o silêncio sem imposições agressivas.
                       </p>
                     </div>
@@ -410,14 +467,14 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, delay: 0.15 }}
-                    className="p-6 md:p-8 rounded-2xl bg-white/45 backdrop-blur-md border border-white/60 hover:bg-white/70 hover:shadow-[0_12px_42px_-12px_rgba(13,59,102,0.06)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
+                    className="p-6 md:p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-white/5 hover:bg-white/[0.06] hover:border-white/10 hover:shadow-[0_12px_42px_rgba(0,0,0,0.5)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
                   >
-                    <div className="w-8 h-8 rounded-full bg-[#0D3B66]/5 flex items-center justify-center shrink-0 mt-0.5 border border-[#0D3B66]/10">
-                      <Check className="w-4 h-4 text-[#0D3B66]" />
+                    <div className="w-8 h-8 rounded-full bg-[#FFD166]/10 flex items-center justify-center shrink-0 mt-0.5 border border-[#FFD166]/20">
+                      <Check className="w-4 h-4 text-[#FFD166]" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-bold text-base text-[#0D3B66]">Como criar momentos de conexão genuína</h3>
-                      <p className="text-xs text-[#1a2a3a]/75 leading-relaxed">
+                      <h3 className="font-bold text-base text-slate-100">Como criar momentos de conexão genuína</h3>
+                      <p className="text-xs text-slate-400 leading-relaxed">
                         Modelos de 10 minutos de atividade com estimulação de ocitocina e forte engajamento natural dos filhos.
                       </p>
                     </div>
@@ -428,14 +485,14 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, delay: 0.25 }}
-                    className="p-6 md:p-8 rounded-2xl bg-white/45 backdrop-blur-md border border-white/60 hover:bg-white/70 hover:shadow-[0_12px_42px_-12px_rgba(13,59,102,0.06)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
+                    className="p-6 md:p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-white/5 hover:bg-white/[0.06] hover:border-white/10 hover:shadow-[0_12px_42px_rgba(0,0,0,0.5)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
                   >
-                    <div className="w-8 h-8 rounded-full bg-[#0D3B66]/5 flex items-center justify-center shrink-0 mt-0.5 border border-[#0D3B66]/10">
-                      <Check className="w-4 h-4 text-[#0D3B66]" />
+                    <div className="w-8 h-8 rounded-full bg-[#FFD166]/10 flex items-center justify-center shrink-0 mt-0.5 border border-[#FFD166]/20">
+                      <Check className="w-4 h-4 text-[#FFD166]" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-bold text-base text-[#0D3B66]">Como equilibrar tecnologia e convivência familiar</h3>
-                      <p className="text-xs text-[#1a2a3a]/75 leading-relaxed">
+                      <h3 className="font-bold text-base text-slate-100">Como equilibrar tecnologia e convivência familiar</h3>
+                      <p className="text-xs text-slate-400 leading-relaxed">
                         Arquitetura física simples do ambiente para desestimular rituais robóticos de celular por pura convivência saudável.
                       </p>
                     </div>
@@ -446,14 +503,14 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, delay: 0.35 }}
-                    className="p-6 md:p-8 rounded-2xl bg-white/45 backdrop-blur-md border border-white/60 hover:bg-white/70 hover:shadow-[0_12px_42px_-12px_rgba(13,59,102,0.06)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
+                    className="p-6 md:p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md border border-white/5 hover:bg-white/[0.06] hover:border-white/10 hover:shadow-[0_12px_42px_rgba(0,0,0,0.5)] hover:scale-[1.01] transition-all duration-300 flex gap-4"
                   >
-                    <div className="w-8 h-8 rounded-full bg-[#0D3B66]/5 flex items-center justify-center shrink-0 mt-0.5 border border-[#0D3B66]/10">
-                      <Check className="w-4 h-4 text-[#0D3B66]" />
+                    <div className="w-8 h-8 rounded-full bg-[#FFD166]/10 flex items-center justify-center shrink-0 mt-0.5 border border-[#FFD166]/20">
+                      <Check className="w-4 h-4 text-[#FFD166]" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-bold text-base text-[#0D3B66]">Como fortalecer o vínculo emocional com seus filhos</h3>
-                      <p className="text-xs text-[#1a2a3a]/75 leading-relaxed">
+                      <h3 className="font-bold text-base text-slate-100">Como fortalecer o vínculo emocional com seus filhos</h3>
+                      <p className="text-xs text-slate-400 leading-relaxed">
                         Processamento afetivo contínuo que constrói segurança mental, autoconfiança e inteligência adaptativa de longo prazo.
                       </p>
                     </div>
@@ -473,7 +530,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-120px" }}
                   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="bg-white/45 backdrop-blur-xl rounded-[32px] p-8 md:p-14 border border-white/60 shadow-[0_24px_60px_-15px_rgba(13,59,102,0.05)]"
+                  className="bg-white/[0.03] backdrop-blur-xl rounded-[32px] p-8 md:p-14 border border-white/5 shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                     
@@ -481,9 +538,9 @@ export default function App() {
                     <div className="md:col-span-5 flex justify-center">
                       <div className="relative group w-full max-w-[280px]">
                         {/* Visual shadow border */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0D3B66]/20 to-[#4EA8DE]/20 rounded-3xl rotate-3 scale-95 group-hover:rotate-1 transition-transform duration-300 -z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#FFD166]/10 to-[#4EA8DE]/15 rounded-3xl rotate-3 scale-95 group-hover:rotate-1 transition-transform duration-300 -z-10" />
                         
-                        <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-white/70 p-2 backdrop-blur-sm">
+                        <div className="rounded-2xl overflow-hidden shadow-lg border border-white/5 bg-white/[0.03] p-2 backdrop-blur-sm">
                           <SmartImage 
                             sources={[
                               walaceImage,
@@ -509,7 +566,7 @@ export default function App() {
                       </span>
 
                       <div className="space-y-1">
-                        <h2 className="text-3xl font-extrabold text-[#0D3B66] tracking-tight">
+                        <h2 className="text-3xl font-extrabold text-white tracking-tight">
                           Walace de Brito Freiman
                         </h2>
                         <p className="text-sm font-bold text-[#FBC300]">
@@ -517,16 +574,16 @@ export default function App() {
                         </p>
                       </div>
 
-                      <p className="text-base text-[#1a2a3a]/85 leading-relaxed">
+                      <p className="text-base text-slate-300 leading-relaxed">
                         Walace de Brito Freiman tem dedicado sua trajetória profissional a apoiar famílias no entendimento profundo de como as transformações do ambiente cognitivo influenciam o comportamento das novas gerações. Desenvolvedor do Método Pinguim, ele preza por intervenções baseadas no diálogo assertivo, acolhimento integral e limites gentis.
                       </p>
 
-                      <p className="text-base text-[#1a2a3a]/85 leading-relaxed">
+                      <p className="text-base text-slate-300 leading-relaxed">
                         Seu trabalho traduz as complexidades da neuropsicologia científica em orientações de extrema simplicidade, permitindo que os pais resgatem o protagonismo da educação sadia e recuperem o foco emocional que os tablets tentam obscurecer no dia a dia.
                       </p>
 
                       <div className="pt-2">
-                        <span className="text-[10px] font-mono tracking-wider text-[#0D3B66]/60 uppercase block font-bold">
+                        <span className="text-[10px] font-mono tracking-wider text-slate-500 uppercase block font-bold">
                           * FOTOGRAFIA PESSOAL DO AUTOR
                         </span>
                       </div>
@@ -539,10 +596,10 @@ export default function App() {
             </section>
 
             {/* SEÇÃO 5: CTA FINAL */}
-            <section className="py-24 bg-[#0D3B66] text-white relative overflow-hidden rounded-t-[48px] shadow-[0_-12px_40px_rgba(13,59,102,0.15)]">
+            <section className="py-24 bg-[#091425] text-white relative overflow-hidden rounded-t-[48px] border-t border-white/5 shadow-[0_-12px_45px_rgba(0,0,0,0.5)]">
               
               {/* Subtle decorative vector mesh - 20% Graphic details */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(78,168,222,0.18),transparent_50%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(78,168,222,0.12),transparent_50%)]" />
 
               <div className="max-w-4xl mx-auto px-6 relative z-10 text-center space-y-8">
                 
@@ -580,7 +637,7 @@ export default function App() {
                   <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
                     A infância passa rápido.
                   </h2>
-                  <p className="text-lg sm:text-xl text-[#F7F9FC]/95 leading-relaxed font-light">
+                  <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-light">
                     Os momentos mais importantes da vida do seu filho não serão lembrados por causa das telas.<br />
                     <strong className="text-[#FFD166] underline decoration-wavy font-bold">Serão lembrados por causa da presença.</strong>
                   </p>
@@ -597,12 +654,12 @@ export default function App() {
                     href="https://www.amazon.com.br/dp/B0GTG3GN4W" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#FFD166] hover:bg-[#ffe199] text-[#0D3B66] font-extrabold text-base px-10 py-4.5 rounded-xl shadow-[0_12px_32px_-5px_rgba(255,209,102,0.4)] hover:shadow-[0_16px_40px_-5px_rgba(255,209,102,0.5)] transition-all cursor-pointer inline-flex items-center gap-2 group animate-pulse-slow"
+                    className="bg-[#FFD166] hover:bg-[#ffe199] text-[#070D19] font-extrabold text-base px-10 py-4.5 rounded-xl shadow-[0_12px_32px_-5px_rgba(255,209,102,0.4)] hover:shadow-[0_16px_40px_-5px_rgba(255,209,102,0.5)] transition-all cursor-pointer inline-flex items-center gap-2 group animate-pulse-slow"
                   >
                     Comprar Agora na Amazon
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
-                  <p className="text-xs text-[#F7F9FC]/60 uppercase tracking-widest font-mono">
+                  <p className="text-xs text-slate-500 uppercase tracking-widest font-mono">
                     Garantia de Leitura Segura • Formato Físico ou E-Book
                   </p>
                 </motion.div>
@@ -611,15 +668,15 @@ export default function App() {
             </section>
 
             {/* FOOTER */}
-            <footer className="bg-white/30 backdrop-blur-md border-t border-white/50 py-12 text-center relative z-10">
+            <footer className="bg-black/30 backdrop-blur-md border-t border-white/5 py-12 text-center relative z-10">
               <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-sm bg-[#0D3B66] flex items-center justify-center text-[#FFD166] text-xs font-bold">
+                  <div className="w-6 h-6 rounded-sm bg-[#FFD166] flex items-center justify-center text-[#070D19] text-xs font-bold">
                     MP
                   </div>
-                  <span className="text-sm font-bold text-[#0D3B66]">Método Pinguim • Walace Freiman</span>
+                  <span className="text-sm font-bold text-[#FFD166]">Método Pinguim • Walace Freiman</span>
                 </div>
-                <p className="text-xs text-[#1a2a3a]/65 font-medium">
+                <p className="text-xs text-slate-400 font-medium">
                   © {new Date().getFullYear()} Método Pinguim. Todos os direitos reservados.
                 </p>
               </div>
@@ -644,15 +701,15 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="bg-white rounded-3xl shadow-2xl border border-[#0D3B66]/10 w-full max-w-2xl overflow-hidden relative z-10 flex flex-col max-h-[85vh]"
+              className="bg-[#091522] rounded-3xl shadow-2xl border border-white/5 w-full max-w-2xl overflow-hidden relative z-10 flex flex-col max-h-[85vh]"
             >
               {/* Header */}
-              <div className="p-6 bg-[#0D3B66] text-white flex justify-between items-center shrink-0">
+              <div className="p-6 bg-[#050B14] text-white flex justify-between items-center shrink-0">
                 <div className="flex items-center gap-2.5">
                   <BookOpen className="w-5 h-5 text-[#FFD166]" />
                   <div>
                     <h3 className="font-bold text-base text-white">Amostra Digital Grátis</h3>
-                    <p className="text-[10px] text-[#F7F9FC]/70 uppercase tracking-wider">Salvando Meu Filho das Telas</p>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Salvando Meu Filho das Telas</p>
                   </div>
                 </div>
                 <button 
@@ -666,25 +723,25 @@ export default function App() {
 
               {/* Scrollable Chapter content */}
               <div className="p-6 md:p-8 overflow-y-auto space-y-4 text-left">
-                <h4 className="text-xl font-bold text-[#0D3B66] pb-2 border-b border-[#0D3B66]/5">
+                <h4 className="text-xl font-bold text-white pb-2 border-b border-white/5">
                   {firstChapterContent.title}
                 </h4>
                 
                 {firstChapterContent.paragraphs.map((p, idx) => (
-                  <p key={idx} className="text-[#1a2a3a]/85 text-sm md:text-base leading-relaxed">
+                  <p key={idx} className="text-slate-300 text-sm md:text-base leading-relaxed">
                     {p}
                   </p>
                 ))}
 
                 {/* Email Form for remaining book/newsletter */}
-                <div className="mt-8 p-6 bg-[#F7F9FC] rounded-2xl border border-[#0D3B66]/5 space-y-4">
+                <div className="mt-8 p-6 bg-white/[0.02] rounded-2xl border border-white/5 space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="bg-white p-2 rounded-lg text-[#0D3B66] shadow-sm">
+                    <div className="bg-white/5 p-2 rounded-lg text-[#FFD166] border border-white/5 shadow-sm">
                       <Heart className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-[#0D3B66] text-sm">Gostou da introdução?</h5>
-                      <p className="text-xs text-[#1a2a3a]/75">Deixe seu e-mail para receber pílulas semanais do Método Pinguim.</p>
+                      <h5 className="font-bold text-white text-sm">Gostou da introdução?</h5>
+                      <p className="text-xs text-slate-400 font-normal">Deixe seu e-mail para receber pílulas semanais do Método Pinguim.</p>
                     </div>
                   </div>
 
@@ -692,7 +749,7 @@ export default function App() {
                     <motion.p 
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="text-xs font-bold text-emerald-600 bg-emerald-50 p-3 rounded-lg flex items-center gap-1.5"
+                      className="text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 p-3 rounded-lg flex items-center gap-1.5"
                     >
                       ✓ E-mail cadastrado com sucesso! Aproveite sua caminhada analógica.
                     </motion.p>
@@ -704,11 +761,11 @@ export default function App() {
                         value={userEmail}
                         onChange={(e) => setUserEmail(e.target.value)}
                         placeholder="Insira seu e-mail principal..."
-                        className="flex-grow px-4 py-2.5 rounded-xl border border-[#0D3B66]/15 bg-white text-xs focus:ring-1 focus:ring-[#0D3B66] focus:outline-none"
+                        className="flex-grow px-4 py-2.5 rounded-xl border border-white/10 bg-black/25 text-white placeholder-slate-500 text-xs focus:ring-1 focus:ring-[#FFD166] focus:outline-none"
                       />
                       <button 
                         type="submit"
-                        className="bg-[#000] hover:bg-[#1a2a3a] text-white font-bold text-[10px] uppercase tracking-wider py-2.5 px-4 rounded-xl transition-all"
+                        className="bg-[#FFD166] hover:bg-[#ffe199] text-[#070D19] font-bold text-[10px] uppercase tracking-wider py-2.5 px-4 rounded-xl transition-all"
                       >
                         Inscrever-me
                       </button>
@@ -718,13 +775,13 @@ export default function App() {
               </div>
 
               {/* Modal footer buy CTA */}
-              <div className="p-4 bg-[#F7F9FC] border-t border-[#0D3B66]/5 flex justify-between items-center shrink-0">
-                <span className="text-xs font-semibold text-[#0D3B66]">Adquira a obra completa!</span>
+              <div className="p-4 bg-[#050D17] border-t border-white/5 flex justify-between items-center shrink-0">
+                <span className="text-xs font-semibold text-slate-300">Adquira a obra completa!</span>
                 <a 
                   href="https://www.amazon.com.br/dp/B0GTG3GN4W"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#0D3B66] text-white hover:bg-[#0D3B66]/90 text-xs font-bold px-4 py-2.5 rounded-lg shadow-sm"
+                  className="bg-[#FFD166] text-[#070D19] hover:bg-[#ffe199] text-xs font-bold px-4 py-2.5 rounded-lg shadow-sm"
                 >
                   Comprar na Amazon
                 </a>
