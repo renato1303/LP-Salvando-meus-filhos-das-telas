@@ -23,7 +23,10 @@ import {
   Award,
   Play,
   Volume2,
-  VolumeX
+  VolumeX,
+  Book,
+  Tablet,
+  ExternalLink
 } from 'lucide-react';
 
 interface SmartImageProps {
@@ -85,6 +88,7 @@ function SmartImage({
 
 export default function App() {
   const [sampleModalOpen, setSampleModalOpen] = useState(false);
+  const [buyModalOpen, setBuyModalOpen] = useState(false);
   const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -219,16 +223,13 @@ export default function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                <a 
-                  href="https://www.amazon.com.br/dp/B0GTG3GN4W" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  onClick={handleRevealClick}
+                <button 
+                  onClick={() => { setBuyModalOpen(true); handleRevealClick(); }}
                   className="bg-[#FFD166] hover:bg-[#ffe199] text-[#070D19] font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-[0_10px_25px_-5px_rgba(255,209,102,0.35)] hover:shadow-[0_12px_30px_-5px_rgba(255,209,102,0.5)] transition-all inline-flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Comprar na Amazon
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </button>
                 <button 
                   onClick={() => { setSampleModalOpen(true); handleRevealClick(); }}
                   className="bg-white/10 hover:bg-white/20 text-white border border-white/10 backdrop-blur-md font-semibold text-sm px-8 py-3.5 rounded-xl shadow-sm transition-all cursor-pointer text-center"
@@ -648,12 +649,12 @@ export default function App() {
                               'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80', 
                               'https://picsum.photos/id/1012/800/1000'
                             ]}
-                            alt="Walace de Brito Freiman - Psicólogo Clínico"
+                            alt="Walace de Brito Freiman - Criador do Método Pinguim"
                             className="w-full object-cover aspect-[4/5] rounded-xl brightness-[1.02]"
                             aspectRatioClass="aspect-[4/5]"
                             fallbackIcon={<Users className="w-12 h-12" />}
                             fallbackTitle="Walace Freiman"
-                            fallbackDesc="Psicólogo Clínico, especialista em Neuropsicologia do neurodesenvolvimento."
+                            fallbackDesc="Empresário, escritor, teólogo e pós-graduado em Psicopedagogia. Criador do Método Pinguim."
                           />
                         </div>
                       </div>
@@ -670,16 +671,24 @@ export default function App() {
                           Walace de Brito Freiman
                         </h2>
                         <p className="text-sm font-bold text-[#FBC300]">
-                          Psicólogo Clínico e Especialista em Neuropsicologia do Desenvolvimento
+                          Empresário, Escritor, Teólogo e Pós-graduado em Psicopedagogia
                         </p>
                       </div>
 
-                      <p className="text-base text-slate-300 leading-relaxed">
-                        Walace de Brito Freiman tem dedicado sua trajetória profissional a apoiar famílias no entendimento profundo de como as transformações do ambiente cognitivo influenciam o comportamento das novas gerações. Desenvolvedor do Método Pinguim, ele preza por intervenções baseadas no diálogo assertivo, acolhimento integral e limites gentis.
+                      <p className="text-base text-slate-300 leading-relaxed font-semibold">
+                        Empresário, escritor, teólogo e pós-graduado em Psicopedagogia. Sou esposo da Luciana, pai do Benjamin e criador do Método Pinguim.
                       </p>
 
                       <p className="text-base text-slate-300 leading-relaxed">
-                        Seu trabalho traduz as complexidades da neuropsicologia científica em orientações de extrema simplicidade, permitindo que os pais resgatem o protagonismo da educação sadia e recuperem o foco emocional que os tablets tentam obscurecer no dia a dia.
+                        Minha jornada começou em casa ao perceber as dificuldades das famílias modernas em manter a conexão e o diálogo. Compreendi que o excesso de telas é apenas o sintoma de algo mais profundo: rotinas fragilizadas, falta de presença e dificuldades de comunicação.
+                      </p>
+
+                      <p className="text-base text-slate-300 leading-relaxed">
+                        Dessa experiência nasceu o Método Pinguim, uma metodologia criada para ajudar pais a reorganizarem o lar, estabelecerem limites saudáveis e resgatarem o tempo de qualidade em família, provando que nenhuma tecnologia substitui o afeto real.
+                      </p>
+
+                      <p className="text-base text-slate-300 leading-relaxed">
+                        Minha missão é ajudar famílias a restaurarem aquilo que realmente transforma uma casa: relacionamento, limites saudáveis e amor presente.
                       </p>
 
                       <div className="pt-2">
@@ -750,15 +759,13 @@ export default function App() {
                   transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex flex-col items-center gap-4 pt-4"
                 >
-                  <a 
-                    href="https://www.amazon.com.br/dp/B0GTG3GN4W" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setBuyModalOpen(true)}
                     className="bg-[#FFD166] hover:bg-[#ffe199] text-[#070D19] font-extrabold text-base px-10 py-4.5 rounded-xl shadow-[0_12px_32px_-5px_rgba(255,209,102,0.4)] hover:shadow-[0_16px_40px_-5px_rgba(255,209,102,0.5)] transition-all cursor-pointer inline-flex items-center gap-2 group animate-pulse-slow"
                   >
                     Comprar Agora na Amazon
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                   <p className="text-xs text-slate-500 uppercase tracking-widest font-mono">
                     Garantia de Leitura Segura • Formato Físico ou E-Book
                   </p>
@@ -877,14 +884,117 @@ export default function App() {
               {/* Modal footer buy CTA */}
               <div className="p-4 bg-[#050D17] border-t border-white/5 flex justify-between items-center shrink-0">
                 <span className="text-xs font-semibold text-slate-300">Adquira a obra completa!</span>
-                <a 
-                  href="https://www.amazon.com.br/dp/B0GTG3GN4W"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#FFD166] text-[#070D19] hover:bg-[#ffe199] text-xs font-bold px-4 py-2.5 rounded-lg shadow-sm"
+                <button 
+                  onClick={() => setBuyModalOpen(true)}
+                  className="bg-[#FFD166] text-[#070D19] hover:bg-[#ffe199] text-xs font-bold px-4 py-2.5 rounded-lg shadow-sm cursor-pointer"
                 >
                   Comprar na Amazon
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* AMAZON FORMAT SELECTION MODAL */}
+      <AnimatePresence>
+        {buyModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setBuyModalOpen(false)}
+              className="fixed inset-0 bg-black/65 backdrop-blur-sm"
+            />
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="bg-[#091522] rounded-3xl shadow-2xl border border-white/5 w-full max-w-lg overflow-hidden relative z-10 flex flex-col p-6 sm:p-8 space-y-6 text-left"
+            >
+              {/* Header */}
+              <div className="flex justify-between items-start">
+                <div className="space-y-1">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                    Escolha o Formato
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    Selecione como deseja ler "Salvando Meu Filho das Telas" na Amazon
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setBuyModalOpen(false)}
+                  className="p-1.5 hover:bg-white/10 rounded-full transition-colors text-slate-400 hover:text-white cursor-pointer"
+                  aria-label="Fechar"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Formats Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                
+                {/* Physical Book Format */}
+                <a
+                  href="https://a.co/d/0eBQ4HLE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col justify-between p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#FFD166]/40 hover:bg-white/[0.05] transition-all hover:scale-[1.02] cursor-pointer"
+                >
+                  <div className="space-y-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#FFD166]/10 border border-[#FFD166]/20 flex items-center justify-center text-[#FFD166] group-hover:scale-110 transition-transform">
+                      <Book className="w-5 h-5" />
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="font-extrabold text-base text-white group-hover:text-[#FFD166] transition-colors">
+                        Livro Físico
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed font-light">
+                        Versão impressa oficial com papel de alta qualidade, perfeita para leitura longe de distrações.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-6">
+                    <span className="w-full bg-[#FFD166] text-[#070D19] font-extrabold text-xs py-2 px-4 rounded-xl inline-flex items-center justify-center gap-1.5 shadow-sm group-hover:bg-[#ffe199] transition-all">
+                      Comprar Físico <ExternalLink className="w-3 h-3" />
+                    </span>
+                  </div>
                 </a>
+
+                {/* Kindle Format */}
+                <a
+                  href="https://a.co/d/059JxOw8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col justify-between p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#4EA8DE]/40 hover:bg-white/[0.05] transition-all hover:scale-[1.02] cursor-pointer"
+                >
+                  <div className="space-y-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#4EA8DE]/10 border border-[#4EA8DE]/20 flex items-center justify-center text-[#4EA8DE] group-hover:scale-110 transition-transform">
+                      <Tablet className="w-5 h-5" />
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="font-extrabold text-base text-white group-hover:text-[#4EA8DE] transition-colors">
+                        Kindle E-book
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed font-light">
+                        Leitura instantânea em qualquer e-reader Kindle ou aplicativo Kindle para celular/tablet.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-6">
+                    <span className="w-full bg-[#4EA8DE] text-white font-extrabold text-xs py-2 px-4 rounded-xl inline-flex items-center justify-center gap-1.5 shadow-sm group-hover:bg-[#63b9f0] transition-all">
+                      Comprar Kindle <ExternalLink className="w-3 h-3" />
+                    </span>
+                  </div>
+                </a>
+
+              </div>
+
+              {/* Safety banner */}
+              <div className="bg-white/[0.01] border border-white/5 p-3 rounded-xl text-[10px] text-slate-400 text-center uppercase tracking-wider font-semibold">
+                🔒 Transação segura realizada diretamente no site da Amazon
               </div>
             </motion.div>
           </div>
