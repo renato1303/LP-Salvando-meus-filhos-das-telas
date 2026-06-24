@@ -670,9 +670,6 @@ export default function App() {
                         <h2 className="text-3xl font-extrabold text-white tracking-tight">
                           Walace de Brito Freiman
                         </h2>
-                        <p className="text-sm font-bold text-[#FBC300]">
-                          Empresário, Escritor, Teólogo e Pós-graduado em Psicopedagogia
-                        </p>
                       </div>
 
                       <p className="text-base text-slate-300 leading-relaxed font-semibold">
